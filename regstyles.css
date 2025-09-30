@@ -1,0 +1,16 @@
+h1{
+    color:aqua;
+    text-align: center;
+}
+.sub-heading{
+    text-decoration: underline;
+}
+#vehicle li{
+    color: green;
+}
+#place li{
+    color: red;
+}
+.div-content .para{
+    font-style: italic;
+}
