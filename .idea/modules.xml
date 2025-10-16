@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Online_Batch.iml" filepath="$PROJECT_DIR$/.idea/Online_Batch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Python_Programs/.idea/Python_Programs.iml" filepath="$PROJECT_DIR$/../Python_Programs/.idea/Python_Programs.iml" />
     </modules>
   </component>
 </project>

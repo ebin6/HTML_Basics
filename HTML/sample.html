@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="email"]{
+            width: 200px;
+        }
+        input[type="radio"]{
+           accent-color: green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>E-mail</label>
+        <input type="email" name="email" id="email" class="input-box">
+        <br><br>
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob" >
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" min="18" max="60">
+        <br><br>
+        <p>Choose your gender</p>
+        <input type="radio" name="gender" id="male" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="other" value="Other">
+        <label for="other">Other</label>
+    </form>
+</body>
+</html>

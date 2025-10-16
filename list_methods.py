@@ -1,0 +1,20 @@
+my_list=['Python',12,7.2]
+my_list.append(34)
+# my_list.append([45,23,4])
+my_list.extend([45,23,4])
+print(my_list)
+print(my_list.remove(7.2))
+print("After remove : ",my_list)
+print(my_list.pop(0))
+print("After pop : ",my_list)
+my_list.sort(reverse=True)
+print("Sorted list : ",my_list)
+my_list.insert(3,'Python')
+my_list.insert(5,'Python')
+print("After insert : ",my_list)
+my_list.reverse()
+print("Reversed list : ",my_list)
+print(my_list.count('Python'))
+print("Index number : ",my_list.index(34))
+
+
