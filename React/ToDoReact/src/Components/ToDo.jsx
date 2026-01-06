@@ -5,6 +5,8 @@ function ToDo() {
   const [task,setTask] =useState("")
   const [loading,setLoading]=useState(false)
   const [todos,setTodos]=useState([]);
+  const [editingId,setEditingId]=useState(null)
+  const [edingText,setEditingText]=useState("")
 
   useEffect(()=>{fetchTask()},[]);
 
@@ -35,7 +37,15 @@ function ToDo() {
     }
 
   }
+  const startEdit=(todo)=>{
+     setEditingId(todo.id)
+     setEditingText(todo.task)
+  }
 
+  const stopEdit=()=>{
+    setEditingId(null);
+    setEditingText("");
+  }
   const updateToDoStatus=async(todo)=>{
     const response=await axios.patch(`http://127.0.0.1:8000/edit-task/${todo.id}`,{is_completed:!todo.is_completed});
     fetchTask();
@@ -54,7 +64,17 @@ function ToDo() {
                 todos.map((todo)=>(
                     <li key={todo.id}>
                         <input type="checkbox" checked={todo.is_completed}onChange={()=>updateToDoStatus(todo)}/>
-                        {todo.task}
+                        <span>
+                            {editingId === todo.id ?(<>
+                            <input type="text" value={edingText}/>
+                            <button>Save</button>
+                            <button onClick={stopEdit}>Cancel</button>
+                            
+                            </>):<>{todo.task}<button onClick={()=>startEdit(todo)}>Edit</button></>}
+                            
+                            
+                        </span>
+                        
                     </li>
                 )
 
