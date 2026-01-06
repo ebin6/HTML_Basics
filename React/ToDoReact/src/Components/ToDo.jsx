@@ -7,15 +7,29 @@ function ToDo() {
 
   const addTask=async(e)=>{
     e.preventDefault();
-    const response=await axios.post("http://127.0.0.1:8000/",{task})
-    console.log(response.data)
+    setLoading(true)
+    if (!task.trim()){
+        alert("Task Cannot be empty")
+        return;
+    };
+    try{
+        const response=await axios.post("http://127.0.0.1:8000/",{task})
+        console.log(response.data)
+        alert("New task added")
+    }catch{
+        alert("Failed to add task")
+    }finally{
+        setTask("");
+        setLoading(false)
+    }
+
   }
   return (
     <div>
         <h1>ToDo</h1>
         <form onSubmit={addTask}>
             <input type="text" value={task} onChange={(e)=>setTask(e.target.value)}/>
-            <button type="submit">Add Task</button>
+            <button type="submit">{loading?"Saving ...":"Add Task"}</button>
         </form>
     </div>
   )
